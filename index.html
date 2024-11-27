@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <div class="outer">
+      <!-- input start -->
+      <div class="input-container">
+        <input
+          type="text"
+          id="input"
+          class="input-field"
+          placeholder="Enter arithmetic expression (e.g., 2+2)"
+        />
+      </div>
+      <!-- input end's -->
+
+      <br />
+
+      <!-- top buttons -->
+      <button onclick="calculate()" class="btn" id="Calculate">
+        Calculate
+      </button>
+      <button onclick="history.go(0)" class="btn" id="Clear">Clear</button>
+      <button onclick="history.go(0)" class="btn" id="Clearall">
+        Clear All
+      </button>
+
+      <!-- top buttons end's -->
+
+      <!-- keypad buttons -->
+      <br />
+      <button class="btn" id="btn1">1</button>
+      <button class="btn" id="btn2">2</button>
+      <button class="btn" id="btn3">3</button>
+      <button class="btn" id="minus">-</button>
+      <button class="btn" id="multiply">*</button>
+      <br />
+      <button class="btn" id="btn4">4</button>
+      <button class="btn" id="btn5">5</button>
+      <button class="btn" id="btn6">6</button>
+      <button class="btn" id="plus">+</button>
+      <button class="btn" id="divide">&divide;</button>
+      <br />
+      <button class="btn" id="btn7">7</button>
+      <button class="btn" id="btn8">8</button>
+      <button class="btn" id="btn9">9</button>
+      <button class="btn" id="mod">%</button>
+      <button class="btn" id="square">&Sqrt;</button>
+      <br />
+
+      <button class="btn" id="btn0">0</button>
+      <button class="btn" id="btn00">00</button>
+      <button class="btn" id="decimal">.</button>
+      <button class="btn" onclick="calculate()" style="width: 125px">=</button>
+    </div>
+    <!-- keypad button end's -->
+
+    <script>
+      //calculate the expression
+      function calculate() {
+        let input = document.getElementById("input").value;
+        let result = eval(input);
+        document.getElementById("input").value = result;
+      }
+      // calculate end's
+
+      function clear() {
+        document.getElementById("input").value = "";
+        document.getElementById("result").value = "";
+      }
+      // insert value from button start's
+      document.getElementById("btn0").addEventListener("click", function () {
+        var btn0 = document.getElementById("input");
+        btn0.value += "0";
+      });
+
+      document.getElementById("btn00").addEventListener("click", function () {
+        var btn00 = document.getElementById("input");
+        btn00.value += "00";
+      });
+
+      document.getElementById("btn1").addEventListener("click", function () {
+        var btn1 = document.getElementById("input");
+        btn1.value += "1";
+      });
+
+      document.getElementById("btn2").addEventListener("click", function () {
+        var btn2 = document.getElementById("input");
+        btn2.value += "2";
+      });
+
+      document.getElementById("btn3").addEventListener("click", function () {
+        var btn3 = document.getElementById("input");
+        btn3.value += "3";
+      });
+
+      document.getElementById("btn4").addEventListener("click", function () {
+        var btn4 = document.getElementById("input");
+        btn4.value += "4";
+      });
+
+      document.getElementById("btn5").addEventListener("click", function () {
+        var btn5 = document.getElementById("input");
+        btn5.value += "5";
+      });
+
+      document.getElementById("btn6").addEventListener("click", function () {
+        var btn6 = document.getElementById("input");
+        btn6.value += "6";
+      });
+
+      document.getElementById("btn7").addEventListener("click", function () {
+        var btn7 = document.getElementById("input");
+        btn7.value += "7";
+      });
+
+      document.getElementById("btn8").addEventListener("click", function () {
+        var btn8 = document.getElementById("input");
+        btn8.value += "8";
+      });
+
+      document.getElementById("btn9").addEventListener("click", function () {
+        var btn9 = document.getElementById("input");
+        btn9.value += "9";
+      });
+
+      document.getElementById("plus").addEventListener("click", function () {
+        var plus = document.getElementById("input");
+        plus.value += "+";
+      });
+
+      document.getElementById("minus").addEventListener("click", function () {
+        var minus = document.getElementById("input");
+        minus.value += "-";
+      });
+
+      document.getElementById("divide").addEventListener("click", function () {
+        var divide = document.getElementById("input");
+        divide.value += "/";
+      });
+
+      document.getElementById("decimal").addEventListener("click", function () {
+        var decimal = document.getElementById("input");
+        decimal.value += ".";
+      });
+
+      document.getElementById("mod").addEventListener("click", function () {
+        var mod = document.getElementById("input");
+        mod.value += "%";
+      });
+
+      document.getElementById("square").addEventListener("click", function () {
+        var square = document.getElementById("input");
+        square.value += "^";
+      });
+
+      document
+        .getElementById("multiply")
+        .addEventListener("click", function () {
+          var multiply = document.getElementById("input");
+          multiply.value += "*";
+        });
+      // insert value from button end's
+    </script>
+  </body>
+</html>
